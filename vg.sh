@@ -3,6 +3,9 @@
 g++ test.c -Wall -Werror -std=c++11 -O0 -ggdb3 -o bin/test
 
 valgrind --verbose --tool=memcheck \
+    --trace-children=yes \
+    --suppressions=my.supp \
+    --track-origins=yes \
     --leak-check=full --time-stamp=yes \
     --show-leak-kinds=all \
     --show-reachable=yes \
