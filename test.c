@@ -12,7 +12,8 @@ struct test_s {
 
 int main(int argc, char *argv[]) {
     struct test_s my_test[ARR_SIZE];
-    char *msg = (char *)malloc(10001*sizeof(char));
+    char msg[10000];
+//    char *msg = (char *)malloc(10001*sizeof(char));
     my_test[0].first = (char *)"A String";
     my_test[0].second = (char *)"Second string";
     my_test[0].type = 0;
