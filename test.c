@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include <valgrind/memcheck.h>
+
 #define ARR_SIZE 10
 
 struct test_s {
@@ -24,6 +26,8 @@ int main(int argc, char *argv[]) {
 	my_test[i].type = 1;
 	fprintf(stderr, "%s\n", my_test[i].first);
     }
+    unsigned int errs = VALGRIND_COUNT_ERRORS;
+    fprintf(stderr, "Number of errors: %u\n", errs);
     return 0;
 }
 
