@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
 	sprintf(msg, (char *)"A big long test string for i = %lu\n", i);
 	my_test[i].second = msg;
 	my_test[i].type = 1;
-	fprintf(stderr, "%s\n", my_test[i].first);
+	fprintf(stderr, "%s\n", my_test[i].second);
     }
     unsigned int errs = VALGRIND_COUNT_ERRORS;
     fprintf(stderr, "Number of errors: %u\n", errs);
